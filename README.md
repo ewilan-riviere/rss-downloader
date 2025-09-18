@@ -50,6 +50,12 @@ To download episodes to a specific directory
 rss-downloader https://feeds.audiomeans.fr/feed/c15bf308-42a5-4cdc-9e89-38dce9113c6b.xml -d -o path/to/dir
 ```
 
+To print list as JSON file
+
+```bash
+rss-downloader https://feeds.audiomeans.fr/feed/c15bf308-42a5-4cdc-9e89-38dce9113c6b.xml -j path/to/file.json
+```
+
 ## Build
 
 Build the script.

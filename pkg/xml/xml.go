@@ -10,7 +10,7 @@ import (
 	"github.com/ewilan-riviere/rss-downloader/pkg/utils"
 )
 
-func ParseRSS(data []byte, limit int, reverse bool, print bool, dl bool, outputDir string) {
+func ParseRSS(data []byte, limit int, reverse bool, print bool, dl bool, outputDir string) []rss.Item {
 	var rss rss.RSS
 	if err := xml.Unmarshal(data, &rss); err != nil {
 		fmt.Fprintf(os.Stderr, "Erreur parse XML: %v\n", err)
@@ -51,6 +51,8 @@ func ParseRSS(data []byte, limit int, reverse bool, print bool, dl bool, outputD
 		fmt.Printf("-----\n")
 		fmt.Println("Download skipped (use --download to enable)")
 	}
+
+	return items
 }
 
 func printItem(it rss.Item, i int) {
